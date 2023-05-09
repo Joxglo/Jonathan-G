@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-md navbar-light bg-dark">
+  <div class="container">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" (click)="onChangeMode('event')">
+            <span class="align-middle">Event</span>
+          </a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" (click)="onChangeMode(null)">
+            <h4>PuddingFest</h4>
+          </a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" (click)="onChangeMode('contact')">
+            <span class="align-middle">Contact Us</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Landing Page -->
+<ng-container *ngIf="!mode">
+  <div class="container mt-5 text-center">
+    <h1 class="text-center">Discover the Latest Technologies at PuddingFest</h1>
+    <h4 class="lead text-center fw-normal">Join us for an online event featuring the most innovative technologies from top companies in Indonesia. Explore cutting-edge solutions and learn from industry leaders.</h4>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <img
+          class="img-thumbnail"
+          src="https://plus.unsplash.com/premium_photo-1664297891700-e30889762d94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt="PuddingFest event">
+      </div>
+      <div class="col-md-6 align-self-center">
+        <div class="text-center">
+          <h4 class="text-center fw-normal">"PuddingFest was an amazing experience. I learned so much from the industry experts and discovered some exciting new technologies." - John, past attendee</h4>
+          <a class="btn btn-primary my-3" (click)="onChangeMode('event')">See Our Event Schedule</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Event Page -->
+<ng-container *ngIf="mode === 'event'">
+  <app-event></app-event>
+</ng-container>
+
+<!-- Contact Page -->
+<ng-container *ngIf="mode === 'contact'">
+  <app-contact></app-contact>
+</ng-container>

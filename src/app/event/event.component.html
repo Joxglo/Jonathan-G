@@ -1,0 +1,236 @@
+<!-- Event Page -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Event Schedule</h2>
+  <!-- Daftar rangkaian acara serta penjelasan singkat tentangnya -->
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://images.unsplash.com/photo-1511227682637-ddb98c43c42c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+             class="card-img-top"
+             width="300"
+             height="200"
+             alt="...">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Product Launch by XYZ Corp</h5>
+          <div class="mt-auto">
+            <p class="card-text">Join us for the exciting launch of XYZ's latest product!</p>
+            <a href="#" class="btn btn-primary w-100">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://plus.unsplash.com/premium_photo-1682824037866-f86695c32675?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+             class="card-img-top"
+             width="300"
+             height="200"
+             alt="...">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Workshop: Introduction to AI by ABC Corp</h5>
+          <div class="mt-auto">
+            <p class="card-text">Learn about the basics of Artificial Intelligence from our experts.</p>
+            <a href="#" class="btn btn-primary w-100">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://plus.unsplash.com/premium_photo-1676494236961-6f287c2eabda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+             class="card-img-top"
+             width="300"
+             height="200"
+             alt="...">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Panel Discussion: Future of Technology</h5>
+          <div class="mt-auto">
+            <p class="card-text">Join our panel of experts as they discuss the future of technology.</p>
+            <a href="#" class="btn btn-primary w-100">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Carousel gambar -->
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Previous Events</h3>
+      <h5 class="mb-4">Speakers: {{ getSpeakerName() }}</h5>
+      <div class="carousel slide mb-5" data-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let carousel of carousels" class="carousel-item  {{ carousel.active ? 'active' : '' }}">
+            <img [src]="carousel.image" style="object-fit: cover; object-position: center" width="800" height="800" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" role="button" data-slide="prev" (click)="onClickPrevious()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" role="button" data-slide="next" (click)="onClickNext()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Timeline dari seluruh rangkaian acara PuddingFest -->
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="mb-4">Timeline</h3>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-badge"><i class="fas fa-calendar-alt"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Opening Ceremony</h4>
+              <p><small class="text-muted"><i class="fas fa-clock"></i> 10:00 AM - 11:00 AM</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>Join us for the opening ceremony of PuddingFest 2023!</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><i class="fas fa-laptop"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Product Launch by XYZ Corp</h4>
+              <p><small class="text-muted"><i class="fas fa-clock"></i> 11:30 AM - 12:30 PM</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>Join us for the exciting launch of XYZ's latest product!</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><i class="fas fa-book"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Workshop: Introduction to AI by ABC Corp</h4>
+              <p><small class="text-muted"><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>Learn about the basics of Artificial Intelligence from our experts.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><i class="fas fa-users"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Panel Discussion: Future of Technology</h4>
+              <p><small class="text-muted"><i class="fas fa-clock"></i> 4:30 PM - 6:30 PM</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>Join our panel of experts as they discuss the future of technology.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><i class="fas fa-glass-cheers"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Closing Ceremony</h4>
+              <p><small class="text-muted"><i class="fas fa-clock"></i> 7:00 PM - 8:00 PM</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>Join us as we close out PuddingFest 2023 with a toast!</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="mb-4">Registration</h3>
+      <form [formGroup]="form">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" formControlName="email"
+                 placeholder="example@mail.com"
+                 required
+                 class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <ng-container *ngIf="form.controls['email'].touched">
+            <span
+              class="text-danger"
+              *ngIf="form.controls['email'].errors && form.controls['email'].getError('email')">
+              Invalid email address!
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="form.controls['email'].errors && form.controls['email'].getError('required')">
+              email is required!
+            </span>
+          </ng-container>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputName1" class="form-label">Name</label>
+          <input type="text" formControlName="name"
+                 placeholder="John Doe"
+                 required
+                 class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+          <ng-container *ngIf="form.controls['name'].touched">
+            <span
+              class="text-danger"
+              *ngIf="form.controls['name'].errors && nameControl.errors?.['minlength']">
+              minimum characters is 3!
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="form.controls['name'].errors && form.controls['name'].getError('required')">
+              name is required!
+            </span>
+          </ng-container>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPhoneNumber1" class="form-label">Phone Number</label>
+          <input type="text"
+                 placeholder="08123456789"
+                 maxlength="14"
+                 required
+                 (ngModelChange)="validate()"
+                 formControlName="phone_number" class="form-control" id="exampleInputPhoneNumber1" aria-describedby="emailHelp">
+          <ng-container *ngIf="form.controls['phone_number'].touched">
+            <span
+              class="text-danger"
+              *ngIf="form.controls['phone_number'].errors && form.controls['phone_number'].getError('maxlength')">
+              maximum character limit is 14!
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="form.controls['phone_number'].errors && form.controls['phone_number'].getError('required')">
+              phone number is required!
+            </span>
+            <span
+              *ngIf="!validate() && phoneNumberControls.value"
+              class="text-danger">
+              phone number must starts with 08!
+            </span>
+          </ng-container>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPhoneNumber1" class="form-label">Event</label>
+          <select class="form-select"
+                  required
+                  formControlName="event">
+            <option value="Product Launch by XYZ Corp">Product Launch by XYZ Corp</option>
+            <option value="Workshop: Introduction to AI by ABC Corp">Workshop: Introduction to AI by ABC Corp</option>
+            <option value="Panel Discussion: Future of Technology">Panel Discussion: Future of Technology</option>
+          </select>
+          <ng-container *ngIf="form.controls['event'].touched">
+            <span
+              class="text-danger"
+              *ngIf="form.controls['event'].errors && form.controls['event'].getError('required')">
+              event is required!
+            </span>
+          </ng-container>
+        </div>
+        <button type="submit" (click)="onSubmitForm()" class="btn btn-primary w-100 mb-5">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</div>
